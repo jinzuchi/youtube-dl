@@ -56,6 +56,7 @@ class MGTVIE(InfoExtractor):
         stream_data = self._download_json(
             'https://pcweb.api.mgtv.com/player/getSource', video_id, query={
                 'pm2': api_data['atc']['pm2'],
+                'tk2': base64.urlsafe_b64encode(b'did=%s|pno=1030|ver=0.3.0301|clit=%d' % (compat_str(uuid.uuid4()).encode(), time.time()))[::-1],
                 'video_id': video_id,
             }, headers=self.geo_verification_headers())['data']
         stream_domain = stream_data['stream_domain'][0]
