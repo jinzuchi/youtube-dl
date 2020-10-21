@@ -585,6 +585,7 @@ from .lynda import (
     LyndaCourseIE
 )
 from .m6 import M6IE
+from .m1905 import M1905IE
 from .mailru import (
     MailRuIE,
     MailRuMusicIE,
